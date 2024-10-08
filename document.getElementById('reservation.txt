@@ -1,0 +1,18 @@
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    const destination = document.getElementById('destination').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+
+    // Display confirmation
+    const confirmationDetails = `You have reserved a trip to ${destination} from ${checkin} to ${checkout} for ${guests} guest(s).`;
+    
+    document.getElementById('confirmationDetails').innerText = confirmationDetails;
+    document.getElementById('confirmation').classList.remove('hidden');
+
+    // Optionally, reset the form
+    this.reset();
+});
